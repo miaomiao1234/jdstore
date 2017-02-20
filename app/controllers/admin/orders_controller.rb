@@ -24,6 +24,7 @@ class Admin::OrdersController < ApplicationController
     @order.deliver!
     redirect_to :back
   end
+  
   def cancel
     @order = Order.find(params[:id])
     @order.cancel_order!
@@ -34,5 +35,5 @@ class Admin::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.return_good!
     redirect_to :back
-  end 
+  end
 end
